@@ -1,14 +1,905 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FAST-NUCES</title>
+<link rel="stylesheet" href="jquery.mobile-1.4.5.min.css">
+<script src="jquery-2.1.3.min.js"></script>
+<script src="jquery.mobile-1.4.5.min.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script async="async">
 
+function myf(dloc,myCenter)
+{
+	
+var mapProp = {
+  center:myCenter,
+  zoom:18,
+  mapTypeId:google.maps.MapTypeId.TERRAIN
+  };
+new google.maps.Map(document.getElementById(dloc),mapProp);
+
+}</script>
+<script async="async">
+google.maps.event.addDomListener(div, 'focus', myf);
+
+</script>
 </head>
 
 <body>
-  <div >
-  
+<div data-role="page" id="MainPage">
+  <div data-role="header" align="center"> <img src="logo.png" width="100px" height="100px"/ alt="logo not available">
+    <h1>Welcome to FAST</h1>
   </div>
+  <div data-role="main" class="ui-content">
+    <ul data-role="listview">
+      <li><a href="#AdmissionsPage">Admission</a></li>
+      <li><a href="#CampusesPage">Campuses</a></li>
+      <li><a href="#DepartmentsPage">Departments</a></li>
+    </ul>
+  </div>
+  <div data-role="footer" align="center">
+    <p align="center">&copy; 2015 FAST-NUCES</p>
+  </div>
+</div>
+
+<div data-role="page" id="AdmissionsPage">
+  <div data-role="header" align="center"> <img src="logo.png" width="100px" height="100px"/ alt="logo not available">
+    <h1>Welcome to FAST</h1>
+  </div>
+  <div data-role="main" class="ui-content">
+    <div data-role="collapsible-set">
+    <div data-role="collapsible">
+    	<h3>Eligibility Criteria</h3>
+        <p><div id="Eligibility" class="hide">
+  <div class="partialView-header">
+    <h6>Eligibility Criteria</h6>
+  </div>
+  <div class="accordion" id="Admission-accordion">
+    <div class="accordion-group">
+      <div class=" accordion-heading">
+        <a href="#UnderGraduate" class="accordion-toggle" data-toggle="collapse" data-parent="#Eligibility-accordion">
+          <i class="icon-caret-down"></i>  UnderGraduate
+        </a>
+      </div>
+      <div id="UnderGraduate" class="EligibilityContent accordion-body collapse in ">
+        <br />
+        <strong>Those who have taken the HSSC or an equivalent examination and are awaiting result are also eligible to apply.</strong>
+        The four-year undergraduate programs of full time study are divided into eight semesters.
+        <ol class="Level1List">
+          <li>
+            <strong>BS(Civil Engineering/Electrical Engineering)</strong>
+            <ul class="Level2List">
+              <li>
+                Eligibility
+                <ul class="Level3List">
+                  <li>
+                    -  At least 60% marks in Matriculation or an equivalent examination <strong>AND</strong>
+                  </li>
+                  <li>-  At least 60% marks in HSSC (Pre-Engineering) or an equivalent examination.</li>
+                </ul>
+              </li>
+              <li>
+                Selection Criteria
+                <ul class="Level3List">
+                  <li>
+                    <strong>Selection on the basis of NTS-NAT Marks</strong>
+                  </li>
+                  <li class="liOffset">- Those who have taken NAT-IE examination can apply for admission to the BS(Civil/Electrical) Engineering.</li>
+                  <li class="liOffset">- Cut-off marks to be determined by the Admission Committee of the University.</li>
+                  <li>
+                    <strong>Selection on the basis of NU Admission Test</strong>
+                  </li>
+                  <li class="liOffset">- Merit is determined by assigning 40% weight to marks obtained in Intermediate (part-I) (or an equivalent exam).</li>
+                  <li class="liOffset">- For those whose Intermediate results are not available, their Matriculation marks are considered.</li>
+                  <li class="liOffset">
+                    - Marks obtained in the <a class="hyperlinks" href="#TestPattern" target="_blank">
+                      <b>NU Online Admission Test</b>
+                    </a> are assigned the remaining 60% weight.
+                  </li>
+                  <li>
+                    <strong>Selection on the basis of SAT score</strong>
+                  </li>
+                  <li class="liOffset">
+                    - Combined score of 1,500 or more in the SAT-I examination<strong> AND</strong>
+                  </li>
+                  <li class="liOffset">- At least 550 in the SAT-II (Math Level IIC) examination.</li>
+
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>BS (Computer Science)</strong>
+            <ul class="Level2List">
+              <li>
+                Eligibility
+                <ul class="Level3List">
+                  <li>
+                    -  At least 60% marks in Matriculation or an equivalent examination <strong>AND</strong>
+                  </li>
+                  <li>-  At least 50% marks in HSSC or an equivalent examination. Must have studied Mathematics at HSSC level.</li>
+                </ul>
+              </li>
+              <li>
+                Selection Criteria
+                <ul class="Level3List">
+                  <li>
+                    <strong>Selection on the basis of NTS-NAT Marks</strong>
+                  </li>
+                  <li class="liOffset">- Those who have taken NAT-IE or NAT-ICS examination can apply for admission to the BS (Computer Science).</li>
+                  <li class="liOffset">- Cut-off marks to be determined by the Admission Committee of the University.</li>
+                  <li>
+                    <strong>Selection on the basis of NU Admission Test</strong>
+                  </li>
+                  <li class="liOffset">- Merit is determined by assigning 40% weight to marks obtained in Intermediate (part-I) (or an equivalent exam).</li>
+                  <li class="liOffset">- For those whose Intermediate results are not available, their Matriculation marks are considered.</li>
+                  <li class="liOffset">
+                    - Marks obtained in the <a class="hyperlinks" href="#TestPattern" target="_blank">
+                      <b>NU Online Admission Test</b>
+                    </a> are assigned the remaining 60% weight.
+                  </li>
+                  <li>
+                    <strong>Selection on the basis of SAT score</strong>
+                  </li>
+                  <li class="liOffset">
+                    - Combined score of 1,500 or more in the SAT-I examination <strong>AND</strong>
+                  </li>
+                  <li class="liOffset">- At least 550 in the SAT-II (Math Level IIC) examination.</li>
+
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>BBA/BS (Accounting & Finance)</strong>
+            <ul class="Level2List">
+              <li>
+                Eligibility
+                <ul class="Level3List">
+                  <li>
+                    -  At least 60% marks in Matriculation or an equivalent examination <strong>AND</strong>
+                  </li>
+                  <li>-  Passed the HSSC or an equivalent examination.</li>
+                </ul>
+              </li>
+              <li>
+                Selection Criteria
+                <ul class="Level3List">
+                  <li>
+                    <strong>Selection on the basis of NTS-NAT Marks</strong>
+                  </li>
+                  <li class="liOffset">- Those who have taken NAT-IE, NAT-ICS, NAT-IM, NAT-IGS or NAT-ICOM examination can apply for admission to the BBA/BS(A&F).</li>
+                  <li class="liOffset">- At least 70% marks in NTS Examination.</li>
+                  <li>
+                    <strong>Selection on the basis of NU Admission Test</strong>
+                  </li>
+                  <li class="liOffset">- Merit is determined by assigning 40% weight to marks obtained in Intermediate (part-I) (or an equivalent exam).</li>
+                  <li class="liOffset">- For those whose Intermediate results are not available, their Matriculation marks are considered.</li>
+                  <li class="liOffset">
+                    - Marks obtained in the <a class="hyperlinks" href="#TestPattern" target="_blank">
+                      <b>NU Online Admission Test</b>
+                    </a> are assigned the remaining 60% weight.
+                  </li>
+                  <li>
+                    <strong>Selection on the basis of SAT score</strong>
+                  </li>
+                  <li class="liOffset">- Combined score of 1,500 or more in the SAT-I examination.</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="accordion-group">
+      <div class=" accordion-heading">
+        <a href="#Graduate" class="accordion-toggle" data-toggle="collapse" data-parent="#Eligibility-accordion">
+          <i class="icon-caret-down"></i>  Graduate
+        </a>
+      </div>
+      <div id="Graduate" class="EligibilityContent accordion-body collapse in ">
+        <ol class="Level1List">
+          <li>
+            <strong>MBA (1½-year)</strong>
+            <ul class="Level2List">
+              <li>
+                Eligibility
+                <ul class="Level3List">
+                  <li>
+                    -  BBA or an equivalent degree from a recognized university received after 16 years of education<strong> AND</strong>
+                  </li>
+                  <li>- At least 60% marks or CGPA of at least 2.0.</li>
+                  <li>Graduates of BS (Accounting and Finance) are eligible for admission in MBA programs; provided they have studied at least two courses in each of the following two streams (Marketing and Management).</li>
+                </ul>
+              </li>
+              <li>
+                Selection Criteria
+                <ul class="Level3List">
+                  <li>
+                    <strong>50% weight</strong>
+                  </li>
+                  <li class="liOffset">Performance in any one of the following tests:</li>
+                  <li class="liOffset">
+                    - <a class="hyperlinks" href="#TestPattern" target="_blank">
+                      <strong>NU MBA (1½-year) Admission Test</strong>
+                    </a><strong> OR</strong>
+                  </li>
+                  <li class="liOffset">
+                    - NTS Subject GAT (Minimum 50 Marks and 50 Percentile rank)<strong> OR</strong>
+                  </li>
+                  <li>
+                    <strong>50% weight</strong>
+                  </li>
+                  <li class="liOffset">- Performance in group discussion/ interview.</li>
+
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>MBA (2-year)</strong>
+            <ul class="Level2List">
+              <li>
+                Eligibility
+                <ul class="Level3List">
+                  <li>
+                    - A degree earned from a recognized university after 16 years of non-business education<strong> AND</strong>
+                  </li>
+                  <li>- At least 60% marks or CGPA of at least 2.0(on a scale of 4.0).</li>
+                </ul>
+              </li>
+              <li>
+                Selection Criteria
+                <ul class="Level3List">
+                  <li>
+                    <strong>50% weight</strong>
+                  </li>
+                  <li class="liOffset">Performance in any one of the following tests:</li>
+                  <li class="liOffset">
+                    - <a class="hyperlinks" href="#TestPattern" target="_blank">
+                      <strong>NU MBA (2-year) Admission Test</strong>
+                    </a> <strong>OR</strong>
+                  </li>
+                  <li class="liOffset">- NTS Subject GAT (Minimum 50 Marks and 50 Percentile rank)</li>
+                 
+                  <li>
+                    <strong>50% weight</strong>
+                  </li>
+                  <li class="liOffset">- Performance in group discussion/ interview.</li>
+
+                </ul>
+              </li>
+            </ul>
+          </li>
+          
+          <li>
+            <strong>MS (Software Project Management)</strong>
+            <ul class="Level2List">
+              <li>
+                Eligibility
+                <ul class="Level3List">
+                  <li>- A degree in Science / Engineering earned from a recognized university after 16 years of education.</li>
+                  <li>- At least 60% marks or CGPA of at least 2.0.</li>
+                  <li>- Two years of post qualification experience in software development or related area.</li>
+                </ul>
+              </li>
+              <li>
+                Selection Criteria
+                <ul class="Level3List">
+                  <li class="liOffset">Performance in any one of the following tests:</li>
+                  <li class="liOffset">
+                    -<strong>
+                      <a class="hyperlinks" href="#TestPattern" target="_blank"> NU MS (SPM) Admission Test</a> OR
+                    </strong>
+                  </li>
+                  <li class="liOffset">- NTS Subject GAT (Minimum 50 Marks and 50 Percentile rank)</li>
+
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+          <strong>MS (Software Engineering)</strong>
+          <ul class="Level2List">
+            <li>
+              Eligibility
+              <ul class="Level3List">
+                <li>- Bachelor’s degree (16 years of education) in the Computer Science or Software Engineering program from an HEC recognised 
+                &nbsp;&nbsp;university (or equivalence issued by HEC).</li>
+                <li>- At least 60% marks or CGPA of at least 2.0.</li>
+              </ul>
+            </li>
+            <li>
+              Selection Criteria
+              <ul class="Level3List">
+                <li class="liOffset">Performance in any one of the following tests:</li>
+                <li class="liOffset">
+                  -<strong>
+                    <a class="hyperlinks" href="#TestPattern" target="_blank"> NU MS Subject Admission Test </a> OR
+                  </strong>
+                </li>
+                <li class="liOffset">- NTS Subject GAT (minimum 50 marks and 50 percentile rank) </li>
+
+              </ul>
+            </li>
+          </ul>
+        </li>
+          <!--<li><strong>MS (Computer Networks)</strong>
+                        <ul class="Level2List">
+                            <li>Eligibility
+                                <ul class="Level3List">
+                                    <li>- Degree in relevant subject, earned from a recognized university after 16 years of education<strong> AND</strong></li>
+                                    <li>- At least 65% marks or CGPA of at least 2.5</li>
+                                </ul>
+                            </li>
+                            <li>Selection Criteria
+                                 <ul class="Level3List">
+                                     <li class="liOffset">Admission is based on candidate’s performance in any one of the following two tests:</li>
+                                     <li class="liOffset">-<strong><a class="hyperlinks" href="#TestPattern" target="_blank"> NU MS Subject Admission Test</a> OR</strong></li>
+                                     <li class="liOffset">- International GRE Subject Test.</li>
+                                 </ul>
+                            </li>
+                        </ul>
+                    </li>-->
+          <li>
+            <strong>MS (Computer Science/ Computer Networks & Security)</strong>
+            <ul class="Level2List">
+              <li>
+                Eligibility
+                <ul class="Level3List">
+                  <li>
+                    - Degree in relevant subject, earned from a recognized university after 16 years of education<strong> AND</strong>
+                  </li>
+                  <li>- At least 60% marks or CGPA of at least 2.0</li>
+                </ul>
+              </li>
+              <li>
+                Selection Criteria
+                <ul class="Level3List">
+                  <li class="liOffset">Admission is based on candidate’s performance in any one of the following two tests:</li>
+                  <li class="liOffset">
+                    -<strong>
+                      <a class="hyperlinks" href="#TestPattern" target="_blank"> NU MS Subject Admission Test</a> OR
+                    </strong>
+                  </li>
+                  <li class="liOffset">- NTS Subject GAT (Minimum 50 Marks and 50 Percentile rank)</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>MS (Electrical Engineering)</strong>
+            <ul class="Level2List">
+              <li>
+                Eligibility
+                <ul class="Level3List">
+                  <li>
+                    - Bachelor Degree in a relevant engineering discipline (Electrical, Telecommunications, or Computer engineering, etc.), recognized by
+                    &nbsp;&nbsp;Pakistan Engineering Council (PEC).
+                  </li>
+                  <li>- Minimum CGPA of 2.0 (on a scale of 4.0) or at least 60% marks.</li>
+                </ul>
+              </li>
+              <li>
+                Selection Criteria
+                <ul class="Level3List">
+                  <li class="liOffset">Admission is based on candidate’s performance in any one of the following two tests:</li>
+                  <li class="liOffset">
+                    -<strong>
+                      <a class="hyperlinks" href="#TestPattern" target="_blank"> NU MS Subject Admission Test</a> OR
+                    </strong>
+                  </li>
+                  <li class="liOffset">- NTS Subject GAT (Minimum 50 Marks and 50 Percentile rank)</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          
+            <li>
+              <strong>MS (Civil Engineering)</strong>
+              <ul class="Level2List">
+                <li>
+                  Eligibility
+                  <ul class="Level3List">
+                    <li>
+                      - Degree in relevant subject, earned from a recognized university after 16 years of education<strong> AND</strong>
+                    </li>
+                    <li>- At least 60% marks or CGPA of at least 2.0</li>
+                  </ul>
+                </li>
+                <li>
+                  Selection Criteria
+                  <ul class="Level3List">
+                    <li class="liOffset">- Minimum 50 marks and 50 percentile rank in NTS-subject GAT (Civil Engineering)</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+            <strong>MS (Mathematics)</strong>
+            <ul class="Level2List">
+              <li>
+                Eligibility
+                <ul class="Level3List">
+                  <li>
+                    - Degree in relevant subject, earned from a recognized university after 16 years of education<strong> AND</strong>
+                  </li>
+                  <li>- At least 55% marks or CGPA of at least 2.0</li>
+                </ul>
+              </li>
+              <li>
+                Selection Criteria
+                <ul class="Level3List">
+                  <li class="liOffset">Admission is based on candidate’s performance in any one of the following two tests:</li>
+                  <li class="liOffset">
+                    -<strong>
+                      <a class="hyperlinks" href="#TestPattern" target="_blank"> NU MS Subject Admission Test</a> OR
+                    </strong>
+                  </li>
+                  <li class="liOffset">- NTS Subject GAT (Minimum 50 Marks and 50 Percentile rank)</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>PhD (Computer Science/ Mathematical Sciences/ Electrical Engineering/Management Sciences)</strong>
+            <ul class="Level2List">
+              <li>
+                Eligibility
+                <ul class="Level3List">
+                  <li>
+                    - A degree in a relevant subject, earned from a recognized university after 18 years of relevant education<strong> AND</strong>
+                  </li>
+                  <li>- At least 70% marks or CGPA of at least 3.0<strong> AND</strong>
+                </li>
+                </ul>
+              </li>
+              <li>
+                Selection Criteria
+                <ul class="Level3List">
+                  <li class="liOffset">Admission is based on candidate’s performance in the following:</li>
+                  <li class="liOffset">
+                    - Minimum 60% marks and at least 50 percentile rank in NTS-Subject GAT or International GRE Subject Test <strong>AND</strong>
+                  </li>
+                  <li class="liOffset">- Interview (to assess research potential)</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+                        
+    <div id="OALevelEquivalence" class="hide">
+    <div class="partialView-header">
+        <h6>Equivalence of O/A-level Grades</h6>
+    </div>
+    <div class="heading">
+        <h6>Equivalence of O-level Grades</h6>
+    </div>
+    <div class="ContentStyle">
+      <strong>
+        <p>
+          The below information is only for the guidance purpose. University will accept the certificate from <a href="http://www.ibcc.edu.pk/" target="_blank">Inter Board Committee of Chairmen (IBCC)</a> for foreign qualification including O/A Level.
+        </p>
+      </strong>
+        <p>To compute equivalent marks for O-level students, add marks of eight subjects (Chemistry, English, Islamiat, Mathematics, Pakistan Studies, Physics, Urdu, and Biology or Computer Studies). The percentage marks corresponding to grade letters is shown in the adjacent table. The marks obtained by the student in these eight subjects are then used to calculate the equivalent matriculation percentage marks.</p>
+        <p>The equivalent marks are calculated using the following criteria used by the Inter Board Committee of Chairmen (IBCC):</p>
+        <div class="span9 ">
+            <table class="table table-striped table-bordered table-condensed span4 offset2 table-align">
+                <thead>
+                    <tr class="tblHeader1">
+                        <td class="center"><strong>Grade</strong></td>
+                        <td class="center"><strong>Points</strong></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="center">A*</td>
+                        <td class="center">90%</td>
+                    </tr>
+                    <tr>
+                        <td class="center">A</td>
+                        <td class="center">85%</td>
+                    </tr>
+                    <tr>
+                        <td class="center">B</td>
+                        <td class="center">75%</td>
+                    </tr>
+                    <tr>
+                        <td class="center">C</td>
+                        <td class="center">65%</td>
+                    </tr>
+                    <tr>
+                        <td class="center">D</td>
+                        <td class="center">55%</td>
+                    </tr>
+                    <tr>
+                        <td class="center">E</td>
+                        <td class="center">45%</td>
+                    </tr>
+                    <tr>
+                        <td class="center">U</td>
+                        <td class="center">0%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>Example: Computing marks equivalent to matriculation.</p>
+        <div>
+            <table class="table table-striped table-bordered table-condensed span7 offset1 table-align">
+                <thead>
+                    <tr class="tblHeader1">
+                        <td></td>
+                        <td class="span2"><strong>Subject</strong></td>
+                        <td class="center"><strong>Grade</strong></td>
+                        <td class="center"><strong>Total Marks</strong></td>
+                        <td class="center"><strong>Marks Obtained</strong></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.</td>
+                        <td>Chemistry</td>
+                        <td class="center">A</td>
+                        <td class="center">100</td>
+                        <td class="center">85</td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>English</td>
+                        <td class="center">B</td>
+                        <td class="center">100</td>
+                        <td class="center">75</td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td>Islamiyat</td>
+                        <td class="center">D</td>
+                        <td class="center">100</td>
+                        <td class="center">55</td>
+                    </tr>
+                    <tr>
+                        <td>4.</td>
+                        <td>Mathematics</td>
+                        <td class="center">B</td>
+                        <td class="center">100</td>
+                        <td class="center">75</td>
+                    </tr>
+                    <tr>
+                        <td>5.</td>
+                        <td>Pak. Studies</td>
+                        <td class="center">C</td>
+                        <td class="center">100</td>
+                        <td class="center">65</td>
+                    </tr>
+                    <tr>
+                        <td>6.</td>
+                        <td>Physics</td>
+                        <td class="center">B</td>
+                        <td class="center">100</td>
+                        <td class="center">75</td>
+                    </tr>
+                    <tr>
+                        <td>7.</td>
+                        <td>Urdu</td>
+                        <td class="center">B</td>
+                        <td class="center">100</td>
+                        <td class="center">75</td>
+                    </tr>
+                    <tr>
+                        <td>8.</td>
+                        <td>Biology Or Comp. Studies</td>
+                        <td class="center">D</td>
+                        <td class="center">100</td>
+                        <td class="center">55</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td class="left">Total</td>
+                        <td class="center">800</td>
+                        <td class="center">560</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="clearfix"></div>
+        <p>The equivalent marks in matriculation (out of 850) are (560 ÷800) × 850 = 595</p>
+    </div>
+    <div class="heading">
+        <h6>Equivalence of A-level Grades</h6>
+    </div>
+    <div class="ContentStyle">
+        <p>The marks equivalent to A-level are computed using the above stated total marks (out of 800). Add to this, the marks for the three subjects of A-level using the above table. The total thus obtained is out of 1100. This total can then be used to work out the percentage marks for HSSC.</p>
+        <p>Example: Marks of the above mentioned student in A-level are given below:</p>
+        <div class="span9">
+            <table class="table table-striped table-bordered table-condensed span2 offset3 table-align">
+                <thead>
+                    <tr class="tblHeader1">
+                        <td><strong>Subject</strong></td>
+                        <td><strong>Grade</strong></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Chemistry</td>
+                        <td class="center">C</td>
+                    </tr>
+                    <tr>
+                        <td>Physics</td>
+                        <td class="center">B</td>
+                    </tr>
+                    <tr>
+                        <td>Mathematics</td>
+                        <td class="center">A</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Calculating equivalent marks:</p>
+        <div class="">
+            <table class="table table-striped table-bordered table-condensed span5 offset2 table-align">
+                <thead>
+                    <tr class="tblHeader1">
+                        <td><strong>Subject</strong></td>
+                        <td><strong>Grade</strong></td>
+                        <td><strong>Total Marks</strong></td>
+                        <td><strong>Marks Obtained</strong></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>O-level Marks</td>
+                        <td></td>
+                        <td class="center">800</td>
+                        <td class="center">560</td>
+                    </tr>
+                    <tr>
+                        <td>Chemistry</td>
+                        <td class="center">C</td>
+                        <td class="center">100</td>
+                        <td class="center">65</td>
+                    </tr>
+                    <tr>
+                        <td>Physics</td>
+                        <td class="center">B</td>
+                        <td class="center">100</td>
+                        <td class="center">75</td>
+                    </tr>
+                    <tr>
+                        <td>Mathematics</td>
+                        <td class="center">A</td>
+                        <td class="center">100</td>
+                        <td class="center">85</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="text-left">Total</td>
+                        <td class="center">1100</td>
+                        <td class="center">785</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="clearfix"></div>
+        <p>The equivalent marks in HSSC (out of 1100) are (785 ÷1100) × 1100 = 785</p>
+    </div>
+</div>
+</p>
+</div>
+<div data-role="collapsible">
+        <h3>Fee Structure</h3>
+        <p><div id="FeeStructure" class="hide">
+  <div class="partialView-header">
+    <h6>Fee Structure for 2013-14</h6>
+  </div>
+  <div class="heading">
+    <h6>Fees</h6>
+  </div>
+
+  <div class="ContentStyle">
+    <p>
+      Admission Fee of Rs 15,000 is payable once at the time of admission. If a graduate of this University is admitted to a higher degree program, then admission fee    is not payable again.
+    </p>
+    <p>
+      Fee is payable in full before the start of semester. It is subject to revision every year. For the academic year 2014-15, following tuition fee shall be charged.
+    </p>
+    <p>
+      <strong> Students Admitted in fall 2014</strong>
+    </p>
+    <div>
+      <table class="table table-striped table-bordered table-condensed ">
+        <thead>
+          <tr class="tblHeader1">
+            <td></td>
+            <td>
+              <strong>BBA / BS</strong>
+            </td>
+            <td>
+              <strong>MBA</strong>
+            </td>
+            <td>
+              <strong>MS / PhD</strong>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Admission Fee</td>
+            <td>Rs. 15,000</td>
+            <td>Rs. 15,000</td>
+            <td>Rs. 15,000</td>
+          </tr>
+
+          <tr>
+            <td>Tuition Fee</td>
+            <td>Rs. 5,500 per credit hour</td>
+            <td>Rs. 6,500 per credit hour</td>
+            <td>Rs. 6,500 per credit hour</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      <strong>Senior Students (admitted before fall 2014)</strong>
+    </p>
+    <div>
+      <table class="table table-striped table-bordered table-condensed ">
+        <thead>
+          <tr class="tblHeader1">
+            <td></td>
+            <td>
+              <strong>BBA / BS</strong>
+            </td>
+            <td>
+              <strong>MBA</strong>
+            </td>
+            <td>
+              <strong>MS / PhD</strong>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tuition Fee</td>
+            <td>Rs. 88,000 per semester</td>
+            <td>Rs. 6,500 per credit hour</td>
+            <td>Rs. 6,500 per credit hour</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  <div class="heading">
+    <h6>Summer Semester Fees</h6>
+  </div>
+  <div class="ContentStyle">
+    <p>Senior BBA and BS students: Rs 17,600 per course</p>
+    <p>BBA and BS students admitted in fall 2014: Rs 5,500 per credit-hour</p>
+    <p>MBA, MS and PhD students: Rs 6,500 per credit-hour</p>
+  </div>
+  <div class="heading">
+    <h6>Fee Refund Policy</h6>
+  </div>
+  <div class="ContentStyle">
+    <p>Admission Fee is non-refundable</p>
+    <p>Tuition Fee is refunded in accordance with the instructions of Higher Education Commission. </p>
+
+    <div class="span10">
+      <table class="table table-striped table-bordered table-condensed span5 margin">
+        <tbody>
+          <tr>
+            <td>Up to 7th day of convene of classes</td>
+            <td>Full (100 %) Refund</td>
+          </tr>
+          <tr>
+            <td>From 8th-15th day of convene of classes</td>
+            <td>Half (50 %) Refund</td>
+          </tr>
+          <tr>
+            <td>From 16th day of convene of classes</td>
+            <td>No (0 %) Refund</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="clearfix"></div>
+    <p>Fee refund is determined from the date of start of classes or announcement of result, whichever is later.</p>
+
+  </div>
+  <div class="heading">
+    <h6>Migration/Transfer Fee</h6>
+  </div>
+  <div class="ContentStyle">
+    <p>A student who is allowed by the University to migrate/transfer from another campus shall pay Rs. 5000 as Transfer Fee prior to joining the new campus</p>
+    <p>
+      <strong>Provisional Admission of a student stands cancelled if he or she fails in an exam, whose result was awaited at the time of admission</strong>
+    </p>
+  </div>
+</div>
+</p>
+        </div>
+        <div data-role="collapsible">
+        <h3>Admission Test</h3>
+        <p>Information on various Admission Tests is available on the University’s admission web-site apply.nu.edu.pk
+The online admission test is taken on a computer. The candidate should be familiar with the use of mouse and the keyboard. Each candidate is given a different examination. The sections of a test (English, Analytical skills, Math etc) appear in a random sequence. Moreover, questions related to different topics also appear before the candidate in a random sequence. In each section, a candidate can move forward and backwards to review the responses selected. The candidate can change his or her response to any question within the current section.
+Each section of the admission test has a fixed duration. Each section is timed independently and time saved in one section is not carried forward to the next sections. At the end of the test, a summary of the results is displayed on screen. The duration of the Online Admission Test is between two and three hours.
+Applicants should reach the test centre on the date and time specified on the admit card. Latecomers will not be allowed to take the test. Applicants should not bring anything to the test centre except their Admit Cards. No applicant will be allowed to take the test without an endorsed Admit Card. The Admission Test is held at all campuses of the University (Karachi, Lahore, Islamabad, and Peshawar).</p>
+</div>
+    </div>
+    &nbsp;&nbsp;&nbsp;
+    <a href="#MainPage" class="ui-btn">Back</a>
+  </div>
+  <div data-role="footer" align="center">
+    <p align="center">&copy; 2015 FAST-NUCES</p>
+  </div>
+</div>
+
+<div data-role="page" id="CampusesPage">
+  <div data-role="header" align="center"> <img src="logo.png" width="100px" height="100px"/ alt="logo not available">
+    <h1>Welcome to FAST</h1>
+  </div>
+  <div data-role="main" class="ui-content">
+    <div data-role="collapsible-set">
+    <div data-role="collapsible" >
+    <h1 onclick="myf('lhrMap',new google.maps.LatLng(31.4810321,74.3034451))">Lahore</h1>
+    <p><div id="lhrMap" style="width:200px;height:200px;" ></div></p>
+    </div>
+    <div data-role="collapsible" >
+    <h1 onclick="myf('isbMap',new google.maps.LatLng(33.6556180,73.0154950))">Islamabad</h1>
+    <p><div id="isbMap" style="width:200px;height:200px;" ></div></p>
+    </div>
+    <div data-role="collapsible">
+    <h1>Peshawar</h1>
+    <p></p>
+    </div>
+    <div data-role="collapsible">
+    <h1>Karachi</h1>
+    <p></p>
+    </div>
+    </div>
+    <a href="#MainPage" class="ui-btn">Back</a>
+  </div>
+  <div data-role="footer" align="center">
+    <p align="center">&copy; 2015 FAST-NUCES</p>
+  </div>
+</div>
+
+<div data-role="page" id="DepartmentsPage">
+  <div data-role="header" align="center"> <img src="logo.png" width="100px" height="100px"/ alt="logo not available">
+    <h1>Welcome to FAST</h1>
+  </div>
+  <div data-role="main" class="ui-content">
+    <div data-role="collapsible-set">
+    	<div data-role="collapsible">
+        <h1>BS(CS)</h1>
+        <p>BS(CS) Details</p>
+        </div>
+        <div data-role="collapsible">
+        <h1>BS(EE)</h1>
+        <p>BS(EE) Details</p>
+        </div>
+        <div data-role="collapsible">
+        <h1>BS(AF)</h1>
+        <p>BS(AF) Details</p>
+        </div>
+    </div>
+    <a href="#MainPage" class="ui-btn">Back</a>
+  </div>
+  <div data-role="footer" align="center">
+    <p align="center">&copy; 2015 FAST-NUCES</p>
+  </div>
+</div>
 </body>
 </html>
